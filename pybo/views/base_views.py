@@ -12,7 +12,7 @@ def index(request):
     """
     pybo 목록 출력
     """
-
+    7/0
     logger.info("INFO 레벨로 출력")
 
     # 입력 파라미터
