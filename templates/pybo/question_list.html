@@ -3,6 +3,8 @@
 {% block content %}
 <div class="container my-3">
     <div class="row justify-content-between my-3">
+
+
         <div class="col-2">
             <select class="form-control so">
                 <option value="recent" {% if so == 'recent' %}selected{% endif %}>최신순</option>
@@ -10,6 +12,19 @@
                 <option value="popular" {% if so == 'popular' %}selected{% endif %}>인기순</option>
             </select>
         </div>
+
+<p>
+  <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    코딩시티 공지사항
+  </a>
+
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    코딩시티컴퓨터학원의 공지사항입니다.
+  </div>
+</div>
+
         <div class="col-4 input-group">
             <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
             <div class="input-group-append">
@@ -52,7 +67,7 @@
         {% endfor %}
         {% else %}
         <tr>
-            <td colspan="3">질문이 없습니다.</td>
+            <td colspan="3">글이 없습니다.</td>
         </tr>
         {% endif %}
         </tbody>
