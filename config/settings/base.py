@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['3.37.14.128']
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'pybo.apps.PyboConfig',
+    'pybo2.apps.Pybo2Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -193,6 +194,10 @@ LOGGING = {
             'propagate': False,
         },
         'pybo': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'pybo2': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
