@@ -3,11 +3,12 @@ from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404
 
 from ..models import Question2
+from django.contrib.auth.decorators import login_required
 
 import logging
 logger = logging.getLogger('pybo2')
 
-
+@login_required(login_url='common:login')
 def index(request):
     """
     pybo 목록 출력
@@ -43,7 +44,7 @@ def index(request):
     context = {'question_list': page_obj, 'page': page, 'kw': kw, 'so': so}  # <------ so 추가
     return render(request, 'pybo2/question_list.html', context)
 
-
+@login_required(login_url='common:login')
 def detail(request, question_id):
     """
     pybo 내용 출력

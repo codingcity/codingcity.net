@@ -1,15 +1,17 @@
 import sys
 
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 #create index function
 
+@login_required(login_url='common:login')
 def index(request):
     print("hi1")
     return render(request, 'webInterpreter/webInterpreter.html')
 
+@login_required(login_url='common:login')
 def runcode(request):
 
     print("hi2")
