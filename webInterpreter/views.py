@@ -8,7 +8,7 @@ from django.shortcuts import render
 
 def index(request):
     print("hi1")
-    return render(request, 'webInterpreter/index.html')
+    return render(request, 'webInterpreter/webInterpreter.html')
 
 def runcode(request):
 
@@ -43,4 +43,4 @@ def runcode(request):
 
     #finally return and render index page and send codedata and output to show on page
 
-    return render(request , 'webInterpreter/index.html', {"code":codeareadata , "output":output})
+    return render(request , 'webInterpreter/webInterpreter.html', {"code":codeareadata , "output":output})
